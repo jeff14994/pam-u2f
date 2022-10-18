@@ -1,5 +1,0 @@
-project: csaw-fuzzing
-target: pam-u2f
-
-cmds:
-  - cmd: /fuzz/fuzz_format_parsers
