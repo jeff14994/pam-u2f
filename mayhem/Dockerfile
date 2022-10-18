@@ -4,7 +4,8 @@ RUN apt-get update && apt-get --no-install-recommends install -y autoconf automa
     libfido2-dev libpam-dev libssl-dev asciidoc make clang
 COPY . /
 RUN ./autogen.sh
-RUN ./configure && ./config.status && make
+RUN ./configure && ./config.status 
+RUN make
 #COPY /fuzz /fuzz
 WORKDIR /fuzz
 # modify sth to start fuzz
