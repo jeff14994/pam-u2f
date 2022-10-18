@@ -54,8 +54,8 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
   }
 
   /* predictable random for this seed */
-  prng_init((uint32_t) data[offset] << 24 | (uint32_t) data[offset + 1] << 16 |
-            (uint32_t) data[offset + 2] << 8 | (uint32_t) data[offset + 3]);
+  //prng_init((uint32_t) data[offset] << 24 | (uint32_t) data[offset + 1] << 16 |
+  //          (uint32_t) data[offset + 2] << 8 | (uint32_t) data[offset + 3]);
   offset += 4;
 
   /* choose which format parser to run, even == native, odd == ssh */
@@ -85,10 +85,10 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
   }
   (void) fseek(fp, 0L, SEEK_SET);
 
-  set_user(username);
-  set_authfile(fileno(fp));
+  //set_user(username);
+  //set_authfile(fileno(fp));
 
-  get_devices_from_authfile(&cfg, username, devs, &n_devs);
+  //get_devices_from_authfile(&cfg, username, devs, &n_devs);
 
   cleanup(devs, n_devs);
   fclose(fp);
