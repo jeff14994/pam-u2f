@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 ubuntu:20.04 as builder
 ENV DEBIAN_FRONTEND=noninteractive 
 RUN apt-get update && apt-get --no-install-recommends install -y autoconf automake libtool pkg-config \
-    libfido2-dev libpam-dev libssl-dev asciidoc make clang
+    libfido2-dev libpam-dev libssl-dev xsltproc asciidoc make clang
 COPY . /
 RUN ./autogen.sh
 RUN ./configure && ./config.status 
